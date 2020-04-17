@@ -8,7 +8,7 @@ import com.fzellner.character.interactor.GetHeroes
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-class CharacterListViewModel(private val getHeroes: GetHeroes) : ViewModel() {
+class HeroesListViewModel(private val getHeroes: GetHeroes) : ViewModel() {
 
     companion object {
         const val LIMIT = 20

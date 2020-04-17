@@ -13,7 +13,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HeroesListFragment : Fragment() {
 
 
-    private val viewModel: CharacterListViewModel by viewModel()
+    private val viewModel: HeroesListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
