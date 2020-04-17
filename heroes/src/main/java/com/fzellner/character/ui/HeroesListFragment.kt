@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.observe
 import com.fzellner.character.R
+import kotlinx.android.synthetic.main.character_list_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HeroesListFragment : Fragment() {
@@ -24,6 +26,10 @@ class HeroesListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.get()
+        viewModel.total.observe(this){
+
+            txtview.text = it.toString()
+        }
 
     }
 
