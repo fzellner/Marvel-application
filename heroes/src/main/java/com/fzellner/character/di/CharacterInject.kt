@@ -10,7 +10,7 @@ object CharacterInject {
     fun modules(): List<Module> = listOf(viewModelModule, useCaseModule)
 
     private val viewModelModule: Module = module {
-        viewModel { HeroesListViewModel(get())}
+        single { HeroesListViewModel(get())}
     }
 
     private val useCaseModule: Module = module {

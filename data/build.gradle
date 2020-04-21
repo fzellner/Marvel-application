@@ -2,21 +2,22 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
-    compileOptions{
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions{
+    kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion AppMetaData.minSdkVersion
+        targetSdkVersion AppMetaData.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -26,7 +27,7 @@ android {
 
     }
     buildTypes {
-        debug{
+        debug {
             buildConfigField "String", "HOST", '"https://gateway.marvel.com:443"'
             buildConfigField "String", "API_PUBLIC_KEY", '"a326ce8dc0d33216fd74ac11fe62c56c"'
             buildConfigField "String", "API_PRIVATE_KEY", '"c6f924ca64c024f1235f544ecfc2c1af1b5afb5a"'
@@ -38,42 +39,30 @@ android {
         }
     }
 
+    testOptions{
+        unitTests.includeAndroidResources = true
+    }
 
 
 }
 
 
-
 dependencies {
-    def retrofitVersion  = "2.6.0"
-    def retrofitCoroutinesVersion  = "0.9.2"
-    def OKHttpVersion  = "3.12.0"
-    def koin = "2.0.1"
-    def paging = "2.1.0-rc01"
+    implementation project(Modules.common)
+    implementation project(Modules.heroes)
+    implementation project(Modules.comic)
 
-    implementation "androidx.paging:paging-runtime-ktx:${paging}"
+    implementation Libraries.coroutines
+    implementation Libraries.koin
+    implementation Libraries.okhttp
+    implementation Libraries.retrofit
+    implementation Libraries.paging
 
-
-    implementation "org.koin:koin-core:${koin}"
-    implementation "org.koin:koin-androidx-scope:${koin}"
-    implementation "org.koin:koin-androidx-viewmodel:${koin}"
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
-    implementation "com.squareup.retrofit2:converter-moshi:${retrofitVersion}"
-    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofitCoroutinesVersion}"
-    implementation "com.squareup.okhttp3:okhttp:${OKHttpVersion}"
-    implementation "com.squareup.okhttp3:logging-interceptor:${OKHttpVersion}"
-
-
-    implementation project(path: ':heroes')
+    testImplementation Libraries.jUnit
+    testImplementation Libraries.testCoroutines
+    testImplementation Libraries.coreTesting
+    testImplementation Libraries.mockk
+    testImplementation Libraries.hamCrest
 
 
 }

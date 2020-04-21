@@ -1,9 +1,10 @@
 package com.fzellner.character.repository
 
+import com.example.commom.utils.model.Listing
 import com.fzellner.character.domain.model.Hero
 import kotlinx.coroutines.flow.Flow
 
 interface HeroesListRepository {
 
-    fun get(limit:Int, offset:Int): Flow<List<Hero>>
+    fun get(): Flow<Listing<Hero>>
 }

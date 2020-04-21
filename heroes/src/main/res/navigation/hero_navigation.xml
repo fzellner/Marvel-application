@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hero_navigation"
+    app:startDestination="@id/heroesListFragment">
+
+    <fragment
+        android:id="@+id/heroesListFragment"
+        android:name="com.fzellner.character.ui.HeroesListFragment"
+        android:label="character_list_fragment"
+        tools:layout="@layout/hero_list_fragment" >
+        <action
+            android:id="@+id/to_heroDetailFragment"
+            app:destination="@id/heroDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heroDetailFragment"
+        android:name="com.fzellner.character.ui.HeroDetailFragment"
+        android:label="hero_detail_fragment"
+        tools:layout="@layout/hero_detail_fragment" >
+        <argument
+            android:name="selectedHero"
+            app:argType="com.fzellner.character.domain.model.Hero" />
+        <action
+            android:id="@+id/to_comic_navigation"
+            app:destination="@id/comic_navigation"
+            app:enterAnim="@anim/fragment_close_enter">
+            <argument
+                android:name="heroId"
+                app:argType="long" />
+        </action>
+    </fragment>
+    <include app:graph="@navigation/comic_navigation" />
+
+
+</navigation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comic_navigation"
+    app:startDestination="@id/comicDetailFragment">
+
+    <fragment
+        android:id="@+id/comicDetailFragment"
+        android:name="com.fzellner.comics.ui.ComicDetailFragment"
+        android:label="comic_detail_fragment"
+        tools:layout="@layout/comic_detail_fragment" >
+        <argument android:name="heroId"
+            app:argType="long"/>
+    </fragment>
+</navigation>

@@ -2,6 +2,8 @@ package com.fzellner.marvel.di
 
 import android.content.ContentResolver
 import com.fzellner.character.di.CharacterInject
+import com.fzellner.comics.di.ComicInject
+import com.fzellner.comics.domain.Comic
 import com.fzellner.data.di.DataInject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +25,7 @@ object AppInject {
         ArrayList<Module>().apply {
             add(appModules)
             addAll(CharacterInject.modules())
+            addAll(ComicInject.modules())
             addAll(DataInject.modules())
 
         }

@@ -1,6 +1,6 @@
 package com.fzellner.data.utils
 
-import com.fzellner.data.domain.exception.Failure
+import com.fzellner.data.domain.exception.*
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +20,14 @@ fun <T> Deferred<Response<T>>.safeAwait(
 
     when (response.isSuccessful) {
         true -> emit((response.body() ?: (default ?: throw NullPointerException())))
-        false -> throw Failure.ServerFailure
+        false -> throw when(response.code()){
+            409 -> MissingApiKeyException
+            405 -> NotAllowedException
+            403 -> ForbiddenException
+            401 -> InvalidApiKeyException
+            else -> Failure.ServerFailure
+
+
+        }
     }
 }

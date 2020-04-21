@@ -1,4 +1,5 @@
-rootProject.name='Marvel'
+include ':comics'
+include ':commom'
 include ':app'
 include ':data'
 include ':heroes'

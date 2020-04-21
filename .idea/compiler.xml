@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="desafio-android-felipe-zellner.app" target="1.8" />
+      <module name="desafio-android-felipe-zellner.buildSrc" target="1.8" />
+      <module name="desafio-android-felipe-zellner.comics" target="1.8" />
+      <module name="desafio-android-felipe-zellner.commom" target="1.8" />
+      <module name="desafio-android-felipe-zellner.data" target="1.8" />
+      <module name="desafio-android-felipe-zellner.heroes" target="1.8" />
+      <module name="marvel.app" target="1.8" />
+      <module name="marvel.buildSrc" target="1.8" />
+      <module name="marvel.comics" target="1.8" />
+      <module name="marvel.commom" target="1.8" />
+      <module name="marvel.data" target="1.8" />
+      <module name="marvel.heroes" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

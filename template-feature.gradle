@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion AppMetaData.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion AppMetaData.minSdkVersion
+        targetSdkVersion AppMetaData.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    testOptions{
+        unitTests.includeAndroidResources = true
+    }
+}
+
+dependencies {
+    implementation project(Modules.common)
+
+    implementation Libraries.kotlin
+    implementation Libraries.lifecycle
+    implementation Libraries.koin
+    implementation Libraries.coroutines
+    implementation Libraries.navigation
+    implementation Libraries.coil
+    implementation Libraries.ui
+
+    testImplementation Libraries.jUnit
+    testImplementation Libraries.testCoroutines
+    testImplementation Libraries.coreTesting
+    testImplementation Libraries.mockk
+    testImplementation Libraries.hamCrest
+}

@@ -2,22 +2,24 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
-    compileSdkVersion 29
+    compileSdkVersion AppMetaData.compileSdkVersion
     buildToolsVersion "29.0.3"
 
     compileOptions{
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions{
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
         applicationId "com.fzellner.marvel"
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion AppMetaData.minSdkVersion
+        targetSdkVersion AppMetaData.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -37,32 +39,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    def coroutinesVersion  = "1.3.2"
-    def koin = "2.0.1"
+    implementation Libraries.coroutines
+    implementation Libraries.ui
+    implementation Libraries.koin
 
-    implementation "org.koin:koin-core:${koin}"
-    implementation "org.koin:koin-androidx-scope:${koin}"
-    implementation "org.koin:koin-androidx-viewmodel:${koin}"
+    implementation project(Modules.data)
+    implementation project(Modules.heroes)
+    implementation project(Modules.comic)
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutinesVersion}"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutinesVersion}"
-
-
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':data')
-    implementation project(path: ':heroes')
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
 }
