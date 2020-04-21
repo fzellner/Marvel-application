@@ -1,21 +1,18 @@
-package com.fzellner.character.ui.adapter
+package com.fzellner.heroes.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.view.ViewCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
-import coil.Coil
 import coil.api.load
-import coil.request.GetRequest
 import coil.transform.CircleCropTransformation
-import com.fzellner.character.R
-import com.fzellner.character.domain.model.Hero
-import com.fzellner.character.ui.HeroesListFragmentDirections
+import com.fzellner.heroes.R
+import com.fzellner.heroes.domain.model.Hero
+import com.fzellner.heroes.ui.HeroesListFragmentDirections
 
 
 class HeroViewHolder(view: View) :

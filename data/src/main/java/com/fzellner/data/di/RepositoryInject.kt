@@ -1,9 +1,9 @@
 package com.fzellner.data.di
 
-import com.fzellner.character.repository.HeroesListRepository
 import com.fzellner.comics.repository.ComicRepository
 import com.fzellner.data.repository.ComicRepositoryImpl
 import com.fzellner.data.repository.HeroListRepositoryImpl
+import com.fzellner.heroes.repository.HeroesListRepository
 import org.koin.core.module.Module
 import org.koin.dsl.module
 

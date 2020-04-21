@@ -1,10 +1,9 @@
 package com.fzellner.marvel.di
 
 import android.content.ContentResolver
-import com.fzellner.character.di.CharacterInject
 import com.fzellner.comics.di.ComicInject
-import com.fzellner.comics.domain.Comic
 import com.fzellner.data.di.DataInject
+import com.fzellner.heroes.di.CharacterInject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidContext

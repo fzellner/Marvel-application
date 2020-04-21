@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/heroesListFragment"
-        android:name="com.fzellner.character.ui.HeroesListFragment"
+        android:name="com.fzellner.heroes.ui.HeroesListFragment"
         android:label="character_list_fragment"
         tools:layout="@layout/hero_list_fragment" >
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/heroDetailFragment"
-        android:name="com.fzellner.character.ui.HeroDetailFragment"
+        android:name="com.fzellner.heroes.ui.HeroDetailFragment"
         android:label="hero_detail_fragment"
         tools:layout="@layout/hero_detail_fragment" >
         <argument
             android:name="selectedHero"
-            app:argType="com.fzellner.character.domain.model.Hero" />
+            app:argType="com.fzellner.heroes.domain.model.Hero" />
         <action
             android:id="@+id/to_comic_navigation"
             app:destination="@id/comic_navigation"

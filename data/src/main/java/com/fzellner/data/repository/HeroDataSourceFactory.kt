@@ -2,8 +2,8 @@ package com.fzellner.data.repository
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import com.fzellner.character.domain.model.Hero
 import com.fzellner.data.api.MarvelApi
+import com.fzellner.heroes.domain.model.Hero
 import kotlinx.coroutines.CoroutineScope
 import java.util.concurrent.Executor
 

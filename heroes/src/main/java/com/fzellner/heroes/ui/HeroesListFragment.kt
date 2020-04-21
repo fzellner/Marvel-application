@@ -1,4 +1,4 @@
-package com.fzellner.character.ui
+package com.fzellner.heroes.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.RecyclerView
 import com.example.commom.utils.ui.afterMeasure
-import com.fzellner.character.R
-import com.fzellner.character.ui.adapter.HereoesAdapter
+import com.fzellner.heroes.R
+import com.fzellner.heroes.ui.adapter.HereoesAdapter
 import kotlinx.android.synthetic.main.hero_list_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HeroesListFragment : Fragment() {
 
-    private val viewModel: HeroesListViewModel by viewModel()
+    private val viewModel: HeroesViewModel by viewModel()
     private lateinit var heroAdapter: HereoesAdapter
 
 

@@ -1,8 +1,7 @@
-package com.fzellner.character.di
+package com.fzellner.heroes.di
 
-import com.fzellner.character.interactor.GetHeroes
-import com.fzellner.character.ui.HeroesListViewModel
-import org.koin.androidx.viewmodel.dsl.viewModel
+import com.fzellner.heroes.interactor.GetHeroes
+import com.fzellner.heroes.ui.HeroesViewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -10,7 +9,7 @@ object CharacterInject {
     fun modules(): List<Module> = listOf(viewModelModule, useCaseModule)
 
     private val viewModelModule: Module = module {
-        single { HeroesListViewModel(get())}
+        single { HeroesViewModel(get())}
     }
 
     private val useCaseModule: Module = module {

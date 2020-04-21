@@ -1,4 +1,4 @@
-package com.fzellner.character.domain.model
+package com.fzellner.heroes.domain.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

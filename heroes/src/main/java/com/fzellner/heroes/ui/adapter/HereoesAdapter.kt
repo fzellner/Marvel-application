@@ -1,4 +1,4 @@
-package com.fzellner.character.ui.adapter
+package com.fzellner.heroes.ui.adapter
 
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.commom.utils.model.NetworkState
 import com.example.commom.utils.ui.NetworkStateItemViewHolder
-import com.fzellner.character.R
-import com.fzellner.character.domain.model.Hero
+import com.fzellner.heroes.R
+import com.fzellner.heroes.domain.model.Hero
 
 class HereoesAdapter(private val retryCallback: () -> Unit) :
     PagedListAdapter<Hero, RecyclerView.ViewHolder>(SHOW_COMPARATOR) {

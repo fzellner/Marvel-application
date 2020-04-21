@@ -7,12 +7,10 @@ import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Before
@@ -124,7 +122,7 @@ class ComicViewModelTest {
     }
 
     @Test
-    fun `get should call iteractor`() {
+    fun `get should call usecase`() {
         viewModel.get(HERO_ID)
         coVerify {
             useCase(GetMostExpensiveComic.Params(HERO_ID))

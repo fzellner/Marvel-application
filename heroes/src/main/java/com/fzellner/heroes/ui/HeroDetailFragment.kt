@@ -1,22 +1,20 @@
-package com.fzellner.character.ui
+package com.fzellner.heroes.ui
 
 import android.os.Bundle
 import android.transition.ChangeBounds
 import android.transition.TransitionInflater
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.ViewCompat
-import androidx.lifecycle.observe
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.api.load
 import coil.transform.CircleCropTransformation
-import com.fzellner.character.R
-import com.fzellner.character.domain.model.Hero
+import com.fzellner.heroes.R
+import com.fzellner.heroes.domain.model.Hero
 import kotlinx.android.synthetic.main.hero_detail_fragment.*
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class HeroDetailFragment : Fragment() {
