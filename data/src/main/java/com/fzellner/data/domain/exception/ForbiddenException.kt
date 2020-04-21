@@ -1,3 +1,3 @@
 package com.fzellner.data.domain.exception
 
-object ForbiddenException : Failure()
+class ForbiddenException(override val message: String) : Failure()

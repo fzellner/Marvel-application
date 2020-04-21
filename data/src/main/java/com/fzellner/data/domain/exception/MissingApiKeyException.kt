@@ -1,3 +1,3 @@
 package com.fzellner.data.domain.exception
 
-object MissingApiKeyException : Failure()
+class MissingApiKeyException(override val message: String) : Failure()

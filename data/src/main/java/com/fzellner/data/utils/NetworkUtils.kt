@@ -21,10 +21,10 @@ fun <T> Deferred<Response<T>>.safeAwait(
     when (response.isSuccessful) {
         true -> emit((response.body() ?: (default ?: throw NullPointerException())))
         false -> throw when(response.code()){
-            409 -> MissingApiKeyException
-            405 -> NotAllowedException
-            403 -> ForbiddenException
-            401 -> InvalidApiKeyException
+            409 -> MissingApiKeyException("Maybe some api key is missing. Check your api keys")
+            405 -> NotAllowedException("This is not allowed")
+            403 -> ForbiddenException("Forbidden")
+            401 -> InvalidApiKeyException("Your api credentials is invalid. Check your credentials")
             else -> Failure.ServerFailure
 
 
