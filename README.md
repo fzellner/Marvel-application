@@ -2,7 +2,7 @@
 
 Aplicação em Kotlin, afim de mostrar os conhecimentos em desenvolvimento android
 
-Arquitetura/Padrões
+Arquitetura/Padrões: 
 MVVM
 SOLID
 Clean
