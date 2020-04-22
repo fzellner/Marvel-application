@@ -29,8 +29,8 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "HOST", '"https://gateway.marvel.com:443"'
-            buildConfigField "String", "API_PUBLIC_KEY", '"a326ce8dc0d33216fd74ac11fe62c56c"'
-            buildConfigField "String", "API_PRIVATE_KEY", '"c6f924ca64c024f1235f544ecfc2c1af1b5afb5a"'
+            buildConfigField "String", "API_PUBLIC_KEY", '""'
+            buildConfigField "String", "API_PRIVATE_KEY", '""'
         }
 
         release {
