@@ -4,8 +4,8 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.commom.utils.model.NetworkState
-import com.example.commom.utils.ui.NetworkStateItemViewHolder
+import com.example.common.utils.model.NetworkState
+import com.example.common.utils.ui.NetworkStateItemViewHolder
 import com.fzellner.heroes.R
 import com.fzellner.heroes.domain.model.Hero
 

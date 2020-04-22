@@ -2,7 +2,7 @@ package com.fzellner.data.repository
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
-import com.example.commom.utils.model.NetworkState
+import com.example.common.utils.model.NetworkState
 import com.fzellner.data.api.MarvelApi
 import com.fzellner.data.domain.model.HeroResult
 import com.fzellner.data.utils.safeAwait

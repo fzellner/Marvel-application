@@ -4,18 +4,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations.switchMap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.commom.utils.model.Listing
-import com.example.commom.utils.model.UseCase
+import com.example.common.utils.model.Listing
+import com.example.common.utils.model.UseCase
 import com.fzellner.heroes.domain.model.Hero
-import com.fzellner.heroes.interactor.GetHeroes
+import com.fzellner.heroes.interactor.GetAll
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-class HeroesViewModel(private val repository: GetHeroes) : ViewModel() {
+class HeroesViewModel(private val getAll: GetAll) : ViewModel() {
 
     val repositoryResult = MutableLiveData<Listing<Hero>>()
 
-    val statementList = switchMap(repositoryResult) {
+    val heroList = switchMap(repositoryResult) {
         it.pagedList
     }
 
@@ -29,7 +29,7 @@ class HeroesViewModel(private val repository: GetHeroes) : ViewModel() {
 
     fun getHeroes() {
 
-        repository(UseCase.None)
+        getAll(UseCase.None)
             .onEach {
                 repositoryResult.value = it
             }

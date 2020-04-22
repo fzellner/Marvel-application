@@ -1,5 +1,5 @@
 include ':comics'
-include ':commom'
+include ':common'
 include ':app'
 include ':data'
 include ':heroes'

@@ -1,8 +1,8 @@
 package com.fzellner.heroes.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.commom.utils.model.UseCase
-import com.fzellner.heroes.interactor.GetHeroes
+import com.example.common.utils.model.UseCase
+import com.fzellner.heroes.interactor.GetAll
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
@@ -24,7 +24,7 @@ class HeroesViewModelTest {
     }
 
     @MockK
-    private lateinit var useCase: GetHeroes
+    private lateinit var useCase: GetAll
     lateinit var viewModel: HeroesViewModel
     private val mainThreadSurrogate = newSingleThreadContext(UI_THREAD)
     @get:Rule

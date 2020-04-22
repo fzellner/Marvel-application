@@ -1,6 +1,6 @@
 package com.fzellner.heroes.di
 
-import com.fzellner.heroes.interactor.GetHeroes
+import com.fzellner.heroes.interactor.GetAll
 import com.fzellner.heroes.ui.HeroesViewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -13,7 +13,7 @@ object CharacterInject {
     }
 
     private val useCaseModule: Module = module {
-        factory { GetHeroes(get()) }
+        factory { GetAll(get()) }
     }
 
 

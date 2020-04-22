@@ -21,22 +21,11 @@ object Versions {
     const val okHttp = "3.12.0"
     const val retrofit = "2.6.0"
     const val retrofitCoroutines = "0.9.2"
-    const val moshi = "1.8.0"
-    const val gson = "2.8.5"
-    const val graphql = "1.2.3"
-    const val room = "2.1.0"
     const val paging = "2.1.0-rc01"
 
     // UI
     const val constraintLayout = "1.1.3"
-    const val biometric = "1.0.0"
     const val coil = "0.10.0"
-    const val cameraX = "1.0.0-alpha07"
-    const val cameraXlifecycle = "1.0.0-alpha01"
-    const val cameraXview = "1.0.0-alpha04"
-    const val zxing = "3.4.0"
-    const val floatingLabelSpinner = "1.1.6"
-    const val viewPager2 = "1.0.0"
     const val material = "1.1.0-alpha08"
     const val recyclerView = "1.1.0"
 
@@ -46,7 +35,6 @@ object Versions {
     const val spMock = "1.0"
     const val coreTesting = "1.0.0-alpha3"
     const val mockk = "1.9.3"
-    const val testEspresso = "3.2.0"
     const val hamCrest = "2.2"
 
 }
@@ -115,7 +103,7 @@ object Libraries {
 
 object Modules {
     const val app = ":app"
-    const val common = ":commom"
+    const val common = ":common"
     const val data = ":data"
     const val heroes = ":heroes"
     const val comic = ":comics"

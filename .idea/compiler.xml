@@ -5,7 +5,7 @@
       <module name="desafio-android-felipe-zellner.app" target="1.8" />
       <module name="desafio-android-felipe-zellner.buildSrc" target="1.8" />
       <module name="desafio-android-felipe-zellner.comics" target="1.8" />
-      <module name="desafio-android-felipe-zellner.commom" target="1.8" />
+      <module name="desafio-android-felipe-zellner.common" target="1.8" />
       <module name="desafio-android-felipe-zellner.data" target="1.8" />
       <module name="desafio-android-felipe-zellner.heroes" target="1.8" />
       <module name="marvel.app" target="1.8" />

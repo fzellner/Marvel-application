@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
-import androidx.recyclerview.widget.RecyclerView
-import com.example.commom.utils.ui.afterMeasure
+import com.example.common.utils.ui.afterMeasure
 import com.fzellner.heroes.R
 import com.fzellner.heroes.ui.adapter.HereoesAdapter
 import kotlinx.android.synthetic.main.hero_list_fragment.*
@@ -34,7 +33,7 @@ class HeroesListFragment : Fragment() {
     }
 
     private fun setObservers() {
-        viewModel.statementList.observe(this) {
+        viewModel.heroList.observe(this) {
             heroAdapter.submitList(it)
         }
         viewModel.networkState.observe(this) {
@@ -44,14 +43,6 @@ class HeroesListFragment : Fragment() {
 
     private fun initAdapter() {
         heroAdapter = HereoesAdapter { viewModel.getHeroes() }
-        //handling the behavior for starting on the middle list on first load
-        heroAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
-            override fun onItemRangeChanged(positionStart: Int, itemCount: Int) {
-                if (positionStart == 0) {
-                    heroRecyclerView.scrollToPosition(0)
-                }
-            }
-        })
         heroRecyclerView.adapter = heroAdapter
         heroRecyclerView.afterMeasure { startPostponedEnterTransition() }
 
