@@ -1,4 +1,4 @@
-# desafio-android-felipe-zellner
+# Marvel Application
 
 Aplicação em Kotlin, afim de mostrar os conhecimentos em desenvolvimento android
 
